@@ -17,4 +17,4 @@ phases:
 artifacts:
   files:
     - simple-service*.jar
-  name: simple-service-build-$CODEBUILD_BUILD_NUMBER.jar
+  name: builds/build-$CODEBUILD_BUILD_NUMBER
