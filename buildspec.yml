@@ -9,12 +9,12 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - mvn package
+      - mv target/simple-service*.jar ./
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
-      - mv target/simple-service*.jar ./
 artifacts:
   files:
-    - simple-service-0.0.1-SNAPSHOT.jar
-    - .ebextensions/**/*
+    - simple-service*.jar
+  name: simple-service-build-$CODEBUILD_BUILD_NUMBER.jar
